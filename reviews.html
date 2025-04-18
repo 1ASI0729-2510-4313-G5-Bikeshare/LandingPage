@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BikeShare - Reviews</title>
+    <link rel="stylesheet" href="styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;300;400;500;700;900&family=Roboto+Slab:wght@100;300;400;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <header>
+        <div class="imahe-container"></div>
+        <div class="segmented-container">
+            <button class="segmented-button selected" onclick="selectButton(this)">Home</button>
+            <button class="segmented-button" onclick="selectButton(this)">Our System</button>
+            <button class="segmented-button" onclick="selectButton(this)">Be a Partner</button>
+            <button class="segmented-button" onclick="selectButton(this)">Reviews</button>
+        </div>
+        <div class="login-container"></div>
+    </header>
+    <div class="container">
+        
+        <!-- Client Reviews Section (A) -->
+        <div class="section">
+
+            <div class="ClientSectorContainer">
+                <h1>Clients</h1>
+                <h2>¡Check some of our clients reviews!</h2>
+            </div>
+            
+            <div class="slideshow-container" id="clientReviews">
+                <!-- Client Review 1 -->
+                <div class="review-slide">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">
+                        "BikeShare has transformed how I commute to work. The bikes are always in great condition and the app makes the whole process seamless."
+                    </p>
+                    <p class="review-author">Emma Rodriguez</p>
+                </div>
+                
+                <!-- Client Review 2 -->
+                <div class="review-slide">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">
+                        "As a daily user for over a year, I can confidently say BikeShare provides the best service in the city. Their customer support is exceptional."
+                    </p>
+                    <p class="review-author">James Wilson</p>
+                </div>
+                
+                <!-- Client Review 3 -->
+                <div class="review-slide">
+                    <div class="stars">★★★★☆</div>
+                    <p class="review-text">
+                        "Great concept and mostly well-executed. Would love to see more stations in the northern suburbs. Otherwise, fantastic service!"
+                    </p>
+                    <p class="review-author">Sophia Chen</p>
+                </div>
+                
+                <!-- Navigation arrows -->
+                <a class="prev" onclick="plusSlides('clientReviews', -1)">❮</a>
+                <a class="next" onclick="plusSlides('clientReviews', 1)">❯</a>
+                
+                <!-- Dots navigation -->
+                <div class="dots">
+                    <span class="dot" onclick="currentSlide('clientReviews', 1)"></span>
+                    <span class="dot" onclick="currentSlide('clientReviews', 2)"></span>
+                    <span class="dot" onclick="currentSlide('clientReviews', 3)"></span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Bike Reviews Section (B) -->
+        <div class="section">
+
+            <div class="ClientSectorContainer">
+                <h1>Bike Lenderes</h1>
+                <h2>¡Check some of our bike lenders reviews!</h2>
+            </div>            
+            <div class="slideshow-container" id="bikeReviews">
+                <!-- Bike Review 1 -->
+                <div class="review-slide">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">
+                        "The new electric bikes are amazing! They make hills feel flat and the battery lasts for multiple trips. Best upgrade BikeShare has made!"
+                    </p>
+                    <p class="review-author">Michael Thompson</p>
+                </div>
+                
+                <!-- Bike Review 2 -->
+                <div class="review-slide">
+                    <div class="stars">★★★★☆</div>
+                    <p class="review-text">
+                        "Comfortable seats and smooth ride. The gears shift perfectly. My only suggestion would be to add phone holders to more bikes."
+                    </p>
+                    <p class="review-author">Lisa Park</p>
+                </div>
+                
+                <!-- Bike Review 3 -->
+                <div class="review-slide">
+                    <div class="stars">★★★★★</div>
+                    <p class="review-text">
+                        "I've tried bike shares in 5 different cities and BikeShare's bikes are by far the most reliable and well-maintained. Great job!"
+                    </p>
+                    <p class="review-author">David Miller</p>
+                </div>
+                
+                <!-- Navigation arrows -->
+                <a class="prev" onclick="plusSlides('bikeReviews', -1)">❮</a>
+                <a class="next" onclick="plusSlides('bikeReviews', 1)">❯</a>
+                
+                <!-- Dots navigation -->
+                <div class="dots">
+                    <span class="dot" onclick="currentSlide('bikeReviews', 1)"></span>
+                    <span class="dot" onclick="currentSlide('bikeReviews', 2)"></span>
+                    <span class="dot" onclick="currentSlide('bikeReviews', 3)"></span>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer>
+        <p>© BikeShare Inc 2025</p>
+    </footer>
+
+    <script>
+        // Initialize slide indices for both slideshows
+        let slideIndices = {
+            clientReviews: 1,
+            bikeReviews: 1
+        };
+    
+        // Show initial slides for both slideshows
+        showSlides('clientReviews', slideIndices.clientReviews);
+        showSlides('bikeReviews', slideIndices.bikeReviews);
+    
+        function plusSlides(slideshowId, n) {
+            slideIndices[slideshowId] += n;
+            showSlides(slideshowId, slideIndices[slideshowId]);
+        }
+    
+        function currentSlide(slideshowId, n) {
+            slideIndices[slideshowId] = n;
+            showSlides(slideshowId, slideIndices[slideshowId]);
+        }
+    
+        function showSlides(slideshowId, n) {
+            let i;
+            // Get elements specific to the current slideshow
+            let slideshow = document.getElementById(slideshowId);
+            let slides = slideshow.getElementsByClassName("review-slide");
+            let dots = slideshow.getElementsByClassName("dot");
+            
+            // Handle wrap-around
+            if (n > slides.length) { slideIndices[slideshowId] = 1 }
+            if (n < 1) { slideIndices[slideshowId] = slides.length }
+            
+            // Hide all slides
+            for (i = 0; i < slides.length; i++) {
+                slides[i].style.display = "none";
+            }
+            
+            // Remove active class from all dots
+            for (i = 0; i < dots.length; i++) {
+                dots[i].className = dots[i].className.replace(" active", "");
+            }
+            
+            // Show current slide and activate corresponding dot
+            slides[slideIndices[slideshowId]-1].style.display = "block";
+            dots[slideIndices[slideshowId]-1].className += " active";
+        }
+    
+        // Auto-advance both slideshows
+        setInterval(function() {
+            plusSlides('clientReviews', 1);
+        }, 5000);
+    
+        setInterval(function() {
+            plusSlides('bikeReviews', 1);
+        }, 5000);
+    </script>
+</body>
+</html>

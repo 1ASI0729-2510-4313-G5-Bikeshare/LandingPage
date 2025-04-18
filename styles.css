@@ -1,0 +1,235 @@
+body{
+    background-color:  rgb(250, 235, 209);
+    margin:0;
+    padding: 0;
+    font-family: 'Roboto', sans-serif;
+}
+
+/*
+  HEADER 
+*/
+header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 80px;
+    background-color: rgb(250, 235, 209);
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+    font-family: 'Roboto Slab', serif;
+}
+
+header::after{
+    content: '';
+    position: absolute;
+    bottom: 0;
+    transform: translateX(-50%);
+    left: 50%;
+    width: 95%;
+    height: 1px;
+    background-color: #000000;
+}
+
+.segmented-container{
+    display: flex;
+    max-width: 600px;
+    margin: 20px auto;
+    background-color: #dce4f5;
+    border-radius: 20px 20px 20px 20px;
+    overflow: hidden;
+
+}
+
+.segmented-button{
+    flex:1;
+    position: relative;
+    border: none;
+    background: transparent;
+    padding: 8px 20px;
+    font-size: 14px;
+    font-weight: 500;
+    color: black;
+    transition: all 0.3s;
+    border: 1px groove rgb(216, 216, 216);
+    font-weight: bold;
+}
+
+.segmented-button:not(:last-child)::after{
+    content:'';
+    position: absolute;
+    right: 0;
+    top:50%;
+    transform: translateY(-50%);
+    height: 60%;
+    width: 1px;
+    background-color: transparent;
+}
+
+.segmented-button.selected{
+    background-color: #bad1ff;
+    color: black;
+}
+
+.segmented-button:hover:not(.selected){
+    background-color: #bcd2ff;
+}
+
+/*
+ fOOTER
+*/
+
+footer{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 40px;
+    background-color: rgb(250, 235, 209);
+    color: black;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 95%; /* Adjust width as needed */
+    height: 1px;
+    background-color: black;
+}
+
+
+/*
+ MIDDLE
+*/
+
+.container{
+    padding-top: 130px;
+    padding-bottom: 50px;
+}
+
+/*.container {
+    max-width: 1200px;
+    margin: 30px auto;
+    padding: 0 20px;
+}*/
+
+h1 {
+    font-size: 25px;
+    text-align: left;
+    color: #000000;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+.section {
+    background-color: rgb(250, 235, 209);
+    border-radius: 8px;
+    padding: 30px;
+    margin-bottom: 40px;
+}
+
+h2 {
+    font-size: 20px;
+    color: #000000;
+    padding-bottom: 10px;
+    margin-top: 0;
+    margin-bottom: 10px;
+    margin-left: 20px;
+}
+
+.ClientSectorContainer{
+    background-color: #dce4f5;
+    border: 2px solid #dce4f5;
+    width: 38%;
+    border-radius: 25px 25px 25px 25px;
+}
+
+/* Slideshow styles */
+.slideshow-container {
+    background-color: white;
+    border-radius: 10px 10px 10px 10px;
+    width: 70%;
+    position: relative;
+    margin: 30px auto;
+    max-width: 800px;
+}
+
+.review-slide {
+    display: none;
+    text-align: center;
+    padding: 20px;
+}
+
+.review-text {
+    font-size: 16px;
+    font-style: italic;
+    line-height: 1.6;
+    margin-bottom: 20px;
+    color: #555;
+}
+
+.review-author {
+    font-weight: bold;
+    font-size: 16px;
+    color: #333;
+}
+
+.stars {
+    color: #FFD700;
+    font-size: 24px;
+    margin: 15px 0;
+}
+
+.prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    margin-top: -22px;
+    padding: 16px;
+    color: #333;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.3s;
+    border-radius: 0 3px 3px 0;
+    background-color: rgba(255,255,255,0.7);
+}
+
+.next {
+    right: 0;
+    border-radius: 3px 0 0 3px;
+}
+
+.prev:hover, .next:hover {
+    background-color: rgba(0,0,0,0.1);
+}
+
+.dots {
+    text-align: center;
+    margin-top: 20px;
+}
+
+.dot {
+    cursor: pointer;
+    height: 12px;
+    width: 12px;
+    margin: 0 5px;
+    background-color: #bbb;
+    border-radius: 50%;
+    display: inline-block;
+    transition: background-color 0.3s;
+}
+
+.active, .dot:hover {
+    background-color: #666;
+}
