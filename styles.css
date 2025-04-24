@@ -1,0 +1,123 @@
+  * {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: white;
+    color: #000;
+    
+  }
+
+
+  
+  .welcome {
+    max-width: 100vw;
+    background-image: url(images/welcome.jpg);
+    background-size: cover;
+    background-position: center;
+    margin: 2rem;
+    padding: 3rem;
+    border-radius: 20px;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    min-height: 50vh;
+    overflow: hidden;
+  }
+  
+  .cta-button {
+    margin-top: 1rem;
+    max-width: 200px;
+    padding: 0.5rem 1rem;
+    background-color: #FFD38F;
+    color: #000;
+    border-radius: 8px;
+    border: none;
+    font-weight: bold;
+    transition: transform 0.3s ease-in-out;
+
+  }
+
+  .cta-button:hover{
+    transform: scale(1.05);
+  }
+
+  @media (max-width: 768px) {
+    .welcome {
+      padding: 2rem;
+      margin: 1rem;
+      text-align: center;
+    }
+  
+    .cta-button {
+      width: 100%;
+    }
+
+    .features {
+        flex-direction: column;
+        margin: 1rem;
+    }
+
+  }
+  
+  .features {
+    max-width: 100%;
+    display: flex;
+    justify-content: space-around;
+    margin: 2rem;
+    gap: 1rem;
+  }
+  
+  .feature-box {
+    background-color: #FFD38F;
+    padding: 1rem;
+    border-radius: 12px;
+    text-align: center;
+    flex: 1;
+  }
+  
+  .feature-box .icon {
+    font-size: 2rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .about-us {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    border: 1px solid #FFD38F;
+    margin: 2rem;
+    padding: 1rem;
+    border-radius: 10px;
+    width: fit-content;
+    gap: 1.5rem;
+  }
+
+  .avatar {
+    flex-shrink: 0;
+    width: 64px;
+    height: 64px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    overflow: hidden;
+  }
+
+  .avatar img {
+    width: 100%; 
+    height: 100%;
+    object-fit: cover;
+    border-radius: 50%;
+  }
+  
+  .footer {
+    text-align: center;
+    padding: 2rem;
+    font-size: 0.9rem;
+    color: #666;
+  }
