@@ -1,0 +1,268 @@
+:root {
+    --primary-color: #90B5FF;
+    --secondary-color: #FFD38F;
+    --dark-color: #000000;
+    --light-color: #ecf0f1;
+    --success-color: #27ae60;
+    --button-bg: #FFD38F;
+    --button-hover: #FFB74D;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Roboto', Roboto, Roboto, Roboto, sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: white;
+    color: var(--dark-color);
+    line-height: 1.6;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh; /* Use viewport height to ensure full-page coverage */
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 5%;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 100;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+}
+
+.logo {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background-color: var(--primary-color);
+}
+
+.brand-name {
+    margin-left: 0.5rem;
+    font-weight: bold;
+    font-size: 1.2rem;
+}
+
+.nav-menu {
+    display: flex;
+    list-style: none;
+}
+
+.nav-link {
+    display: block;
+    padding: 0.5rem 1rem;
+    margin: 0 0.25rem;
+    text-decoration: none;
+    color: var(--dark-color);
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.nav-link:hover {
+    background-color: rgba(52, 152, 219, 0.1);
+}
+
+.nav-link.active {
+    background-color: var(--primary-color);
+    color: white;
+}
+
+.user-profile {
+    font-size: 1.5rem;
+    color: var(--primary-color);
+    cursor: pointer;
+}
+
+.hamburger {
+    display: none;
+    cursor: pointer;
+}
+
+.bar {
+    display: block;
+    width: 25px;
+    height: 3px;
+    margin: 5px auto;
+    transition: all 0.3s ease;
+    background-color: var(--dark-color);
+}
+
+main {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 2rem;
+    flex: 1; 
+}
+
+.hero {
+    margin-bottom: 5rem;
+}
+
+h1 {
+    font-size: 1.8rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.steps-container {
+    display: flex; 
+    flex-wrap: nowrap; 
+    gap: 1rem;
+    overflow-x: auto; 
+    padding-bottom: 1rem; 
+}
+
+.step {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    flex: 1; 
+    min-width: 220px;
+}
+
+.step-icon {
+    width: 100px;
+    height: 100px;
+    margin-bottom: 1rem;
+}
+
+.step-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 0%;
+}
+
+.step-button {
+    background-color: var(--button-bg);
+    color: var(--dark-color);
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    font-weight: bold;
+    margin-bottom: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    width: 100%;
+}
+
+.step-button:hover {
+    background-color: var(--button-hover);
+}
+
+.step-description {
+    font-size: 0.9rem;
+    color: #7A7975;
+    max-height: 100px;
+    overflow-y: auto;
+}
+
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: var(--light-color);
+    color: var(--dark-color);
+    font-size: 0.8rem;
+    width: 100%;
+    margin-top: auto; /* Pushes footer to bottom */
+}
+
+/* Responsive design */
+@media screen and (max-width: 992px) {
+    .steps-container {
+        flex-wrap: wrap; 
+    }
+    
+    .step {
+        flex: 0 0 48%; 
+        margin-bottom: 1.5rem;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .hamburger {
+        display: block;
+    }
+
+    .hamburger.active .bar:nth-child(2) {
+        opacity: 0;
+    }
+
+    .hamburger.active .bar:nth-child(1) {
+        transform: translateY(8px) rotate(45deg);
+    }
+
+    .hamburger.active .bar:nth-child(3) {
+        transform: translateY(-8px) rotate(-45deg);
+    }
+
+    .nav-menu {
+        position: fixed;
+        left: -100%;
+        top: 70px;
+        gap: 0;
+        flex-direction: column;
+        background-color: white;
+        width: 100%;
+        text-align: center;
+        transition: 0.3s;
+        box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+        padding: 1rem 0;
+    }
+
+    .nav-menu.active {
+        left: 0;
+    }
+
+    .nav-link {
+        margin: 0.5rem 0;
+    }
+    
+    .steps-container {
+        flex-direction: column; /* Stack vertically on small screens */
+    }
+    
+    .step {
+        flex: 0 0 100%; /* Full width on small screens */
+        margin-bottom: 2rem;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header {
+        padding: 1rem;
+    }
+    
+    .brand-name {
+        font-size: 1rem;
+    }
+    
+    h1 {
+        font-size: 1.5rem;
+    }
+    
+    main {
+        padding: 0 1rem;
+    }
+    
+    .step-icon {
+        width: 80px;
+        height: 80px;
+    }
+}

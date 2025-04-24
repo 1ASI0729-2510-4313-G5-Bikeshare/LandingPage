@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BikeShare - Alquiler de Bicicletas</title>
+    <link rel="stylesheet" href="assets/styles/styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+</head>
+<body>
+    <header>
+        <div class="logo-container">
+            <img src="https://via.placeholder.com/50" alt="BikeShare Logo" class="logo">
+            <span class="brand-name">BikeShare</span>
+        </div>
+        <nav>
+            <ul class="nav-menu">
+                <li><a href="#" class="nav-link">Home</a></li>
+                <li><a href="#" class="nav-link active">Our System</a></li>
+                <li><a href="#" class="nav-link">Be a Partner</a></li>
+                <li><a href="#" class="nav-link">Reviews</a></li>
+            </ul>
+        </nav>
+        <div class="user-profile">
+            <i class="fas fa-user-circle"></i>
+        </div>
+        <div class="hamburger">
+            <span class="bar"></span>
+            <span class="bar"></span>
+            <span class="bar"></span>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <h1>How to rent a bike <i class="fas fa-arrow-right"></i></h1>
+        </section>
+
+        <section class="steps-container">
+            <div class="step">
+                <div class="step-icon">
+                    <img src="assets/images/explora_bicicletas.png" alt="Mapa con ubicación" class="step-image">
+                </div>
+                <div class="step-button">Explora bicicletas cercanas</div>
+                <p class="step-description">Encuentra bicicletas disponibles cerca de ti con nuestro mapa interactivo. Filtra por tipo, precio y disponibilidad en tiempo real.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-icon">
+                    <img src="assets/images/reserva en linea.png" alt="Calendario con marca de check" class="step-image">
+                </div>
+                <div class="step-button">Reserva fácilmente</div>
+                <p class="step-description">Elige la bicicleta que más te convenga y reserva con unos pocos clics. Todo desde la web, sin llamadas ni papelaos.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-icon">
+                    <img src="assets/images/pago seguro.png" alt="Tarjeta de crédito segura" class="step-image">
+                </div>
+                <div class="step-button">Paga de forma segura</div>
+                <p class="step-description">Realiza el pago directamente en la plataforma con total seguridad. Aceptamos tarjetas y billeteras digitales.</p>
+            </div>
+
+            <div class="step">
+                <div class="step-icon">
+                    <img src="assets/images/bicicleta.png" alt="Persona en bicicleta" class="step-image">
+                </div>
+                <div class="step-button">Recoge y pedalea</div>
+                <p class="step-description">Ve al punto acordado, verifica la bici y comienza tu viaje. Rápido, fácil y sin complicaciones.</p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; BikeShare Inc 2025</p>
+    </footer>
+
+    <script>
+        document.querySelector('.hamburger').addEventListener('click', function() {
+            document.querySelector('.nav-menu').classList.toggle('active');
+            this.classList.toggle('active');
+        });
+    </script>
+</body>
+</html>
