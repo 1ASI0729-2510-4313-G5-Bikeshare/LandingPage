@@ -1,648 +1,723 @@
-<!-- index.html – BikeShare “Be a Partner” landing page -->
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>BikeShare</title>
-  <link rel="stylesheet" href="styles.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Slab&display=swap" rel="stylesheet">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BikeShare • Landing Page</title>
+
+  <!-- Fuentes -->
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&family=Roboto+Slab&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- CSS Principal -->
+  <link rel="stylesheet" href="styles.css" />
+
+  <!-- Íconos (FontAwesome) -->
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    integrity="sha512-ycWkR6QXR0jN/sF0rfPpYhIrRkOVvQ7+raBnXKiyO8VH2mi1g5g+lqRJlUfOn2lRZKvZVJKJPhAbtw2zZh4ggA=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
 </head>
 <body>
-  <div class="container">
-
-    <!-- Header -->
-    <header class="site-header">
+  <!-- ========================= HEADER & NAVEGACIÓN ========================= -->
+  <header class="site-header">
+    <div class="header-container">
+      <!-- Logo -->
       <div class="logo">
-        <img src="img/logo4.png" class="logo-img" alt="BikeShare logo">
-        <span>BikeShare</span>
+        <img src="img/logo4.png" alt="BikeShare logo" class="logo-img" />
+        <span class="logo-text">BikeShare</span>
       </div>
-      <nav>
-        <ul>
-          <li><a href="#" class="segmented-button selected" onclick="selectButton(this)">Home</a></li>
-          <li><a href="#" class="segmented-button" onclick="selectButton(this)">Our System</a></li>
-          <li><a href="#" class="segmented-button" onclick="selectButton(this)">Be a Partner</a></li>
-          <li><a href="#" class="segmented-button" onclick="selectButton(this)">Reviews</a></li>
+
+      <!-- Botón hamburguesa para móvil con ARIA -->
+      <button
+        class="hamburger"
+        id="hamburgerBtn"
+        aria-label="Abrir menú de navegación"
+        aria-controls="navMenu"
+        aria-expanded="false"
+      >
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+        <span class="hamburger-line"></span>
+      </button>
+
+      <!-- Navegación principal -->
+      <nav
+        class="nav-menu"
+        id="navMenu"
+        aria-label="Menú principal"
+        role="navigation"
+      >
+        <ul class="nav-list">
+          <li><a href="#home" class="nav-link">Inicio</a></li>
+          <li><a href="#features" class="nav-link">Nuestro Sistema</a></li>
+          <li><a href="#about" class="nav-link">Sobre Nosotros</a></li>
+          <li><a href="#how-to-rent" class="nav-link">¿Cómo Alquilar?</a></li>
+          <li><a href="#how-to-partner" class="nav-link">Sé un Socio</a></li>
+          <li><a href="#testimonials-clients" class="nav-link">Reseñas</a></li>
+          <li><a href="#contact" class="nav-link">Contacto</a></li>
         </ul>
-      </nav>
-      <div class="user-icon"></div>
-    </header>
 
-    <!-- Banner -->
-    <section class="bannerR" id="home-section" style=" margin-top: 100px;">
-      <h1>Welcome to BikeShare</h1>
-      <div class="highlight">With you in every step of your journey!</div>
-    </section>
-
-    <!-- Benefits -->
-    <section class="bp-benefits" style="margin-bottom: 20px;">
-      <div class="benefit">
-        <p style="font-weight: bold;">Every bike counts with geolocalization</p>
-      </div>
-      <div class="benefit">
-        <p style="font-weight: bold;">We count with high quality bikes</p>
-      </div>
-      <div class="benefit">
-        <p style="font-weight: bold;">We are available 24/7</p>
-      </div>
-    </section>
-
-    <!-- Title -->
-    <div class="how-to" style="margin-bottom: 20px;">
-      <h2>About Us →</h2>
-    </div>
-
-      <!-- Steps -->
-      <div class="step" style="align-items: center; margin-left: 200px;margin-right: 200px;">
-        <p style="font-weight: bold;">BikeShare</p>
-        <p>We are a team focused in bringing new solutions to people who want to save money when trying to move through a district and dont want to contaminate</p>
-      </div>
-      <section class="steps" style="margin-left: 200px; margin-right: 200px;">
-        <div class="step">
-          <p style="font-weight: bold;">José Luis Martinez Valdivia	</p>
-          <p>Engineering Team</p>
-        </div>
-        <div class="step">
-          <p style="font-weight: bold;">Rodrigo Alaya Cabrera	</p>
-          <p>Engineering Team</p>
-        </div>
-        <div class="step">
-          <p style="font-weight: bold;">Niurka Lucero Huarcaya Quispe	</p>
-          <p>Engineering Team</p>
-        </div>
-        <div class="step">
-          <p style="font-weight: bold;">Maria Fernanda Mostajo Orosco</p>
-          <p>Engineering Team</p>
-        </div>
-      </section>
-      <div class="step" style="align-items: center; margin-left: 200px;margin-right: 200px;">
-        <p style="font-weight: bold;">Karen Stephanie Ramos Carpio</p>
-        <p>Engineering Team</p>
-      </div>
-
-
-    <!-- How to Rent a Bike -->
-    <section class="be-partner" id="system-section">
-
-      <!-- Title -->
-      <div class="how-to">
-        <h2>How to Rent a Bike <span class="arrow">→</span></h2>
-      </div>
-
-      <!-- Steps -->
-      <section class="steps">
-        <div class="step">
-          <div class="number">1</div>
-          <img src="img/explora_bicicletas.png" alt="Step 1" class="icon">
-          <p style="font-weight: bold;">Find the closest bikes</p>
-          <p>Find the closest bikes to your location with our interactive map. Filter by price and availability in real time</p>
-        </div>
-        <div class="step">
-          <div class="number">2</div>
-          <img src="img/bicicleta.png" alt="Step 2" class="icon">
-          <p style="font-weight: bold;">Easy booking</p>
-          <p>Book a bike of your choice in no time by just using our web app</p>
-        </div>
-        <div class="step">
-          <div class="number">3</div>
-          <img src="img/pago seguro.png" alt="Step 3" class="icon">
-          <p style="font-weight: bold;">Secure payments</p>
-          <p>Use our platform to pay for your bike. We accept credit cards and digital wallets</p>
-        </div>
-        <div class="step">
-          <div class="number">4</div>
-          <img src="img/reserva en linea.png" alt="Step 4" class="icon">
-          <p style="font-weight: bold;">Pick it up and use it</p>
-          <p>Get to the pick up spot, verify your bike and start using it. As easy as that</p>
-        </div>
-      </section>
-
-      <!-- Call to Action -->
-      <div class="bp-cta">
-        <a href="   " class="btn-primary">Rent a Bike</a>
-      </div>
-
-    </section>
-
-    <!-- Banner -->
-    <section class="banner" id="partner-section">
-      <h1>Join Our Team</h1>
-      <div class="highlight">The best service in the market!</div>
-    </section>
-
-    <!-- Benefits -->
-    <section class="bp-benefits">
-      <div class="benefit">
-        <img src="img/icon-speed.png" alt="Fast Signup">
-        <h4>Fast Signup</h4>
-        <p>Sign up in under 2 minutes and list your bike</p>
-      </div>
-      <div class="benefit">
-        <img src="img/icon-support.png" alt="24/7 Support">
-        <h4>24/7 Support</h4>
-        <p>Get help anytime with our dedicated team</p>
-      </div>
-      <div class="benefit">
-        <img src="img/icon-security.png" alt="Secure Payments">
-        <h4>Secure Payments</h4>
-        <p>Protected transactions with a security deposit</p>
-      </div>
-    </section>
-
-    <!-- How to Be a Partner -->
-    <section class="be-partner">
-
-      <!-- Title -->
-      <div class="how-to">
-        <h2>How to Be a Partner <span class="arrow">→</span></h2>
-      </div>
-
-      <!-- Steps -->
-      <section class="steps">
-        <div class="step">
-          <div class="number">1</div>
-          <img src="img/step1.png" alt="Step 1" class="icon">
-          <p style="font-weight: bold;">Sign Up</p>
-          <p>Create your lender account using your email and basic details</p>
-        </div>
-        <div class="step">
-          <div class="number">2</div>
-          <img src="img/step2.png" alt="Step 2" class="icon">
-          <p style="font-weight: bold;">Upload Your Bike</p>
-          <p>Fill in the listing with photos, a description, and availability</p>
-        </div>
-        <div class="step">
-          <div class="number">3</div>
-          <img src="img/step3.png" alt="Step 3" class="icon">
-          <p style="font-weight: bold;">Receive Bookings</p>
-          <p>Renters can book your bike instantly</p>
-        </div>
-        <div class="step">
-          <div class="number">4</div>
-          <img src="img/step4.png" alt="Step 4" class="icon">
-          <p style="font-weight: bold;">Earn & Repeat</p>
-          <p>Get paid every time your bike is rented</p>
-        </div>
-      </section>
-
-      <!-- Conditions -->
-      <section class="bp-conditions">
-        <h3>Conditions</h3>
-        <ul>
-          <li>Bike in good condition with working brakes</li>
-          <li>Clear photos and honest description</li>
-          <li>Keep the availability calendar up to date</li>
-        </ul>
-      </section>
-
-      <!-- Call to Action -->
-      <div class="bp-cta">
-        <a href="   " class="btn-primary">Start Listing Your Bike</a>
-      </div>
-
-    </section>
-  </div>
-
-  
-    <!--CONTACT US FORM-->
-  <section class="contact-form-box">
-      <h3>Contact Us</h3>
-      <p>If you have questions or want to know more, just reach out!</p>
-      <form action="#" method="POST" class="contact-form">
-        <input type="text" name="name" placeholder="Your name" required>
-        <input type="email" name="email" placeholder="Your email" required>
-        <textarea name="message" rows="5" placeholder="Your message" required></textarea>
-        <button type="submit" class="cta-button">Send Message</button>
-      </form>
-  </section>
-
-  <div class="container" id="review-section"> 
-      <!-- Client Reviews Section (A) -->
-      <div class="section">
-          <div class="ClientSectorContainer">
-              <h1>Clients</h1>
-              <h2>¡Check some of our clients reviews!</h2>
-          </div>
-          
-          <div class="slideshow-container" id="clientReviews">
-              <!-- Client Review 1 -->
-              <div class="review-slide">
-                  <div class="stars">★★★★★</div>
-                  <p class="review-text">
-                      BikeShare has transformed how I commute to work. The bikes are always in great condition and the app makes the whole process seamless.
-                  </p>
-                  <p class="review-author">Emma Rodriguez</p>
-              </div>
-              
-              <!-- Client Review 2 -->
-              <div class="review-slide">
-                  <div class="stars">★★★★★</div>
-                  <p class="review-text">
-                      As a daily user for over a year, I can confidently say BikeShare provides the best service in the city. Their customer support is exceptional.
-                  </p>
-                  <p class="review-author">James Wilson</p>
-              </div>
-              
-              <!-- Client Review 3 -->
-              <div class="review-slide">
-                  <div class="stars">★★★★☆</div>
-                  <p class="review-text">
-                      Great concept and mostly well-executed. Would love to see more stations in the northern suburbs. Otherwise, fantastic service!
-                  </p>
-                  <p class="review-author">Sophia Chen</p>
-              </div>
-              
-              <!-- Navigation arrows -->
-              <a class="prev" onclick="plusSlides('clientReviews', -1)">❮</a>
-              <a class="next" onclick="plusSlides('clientReviews', 1)">❯</a>
-              
-              <!-- Dots navigation -->
-              <div class="dots">
-                  <span class="dot" onclick="currentSlide('clientReviews', 1)"></span>
-                  <span class="dot" onclick="currentSlide('clientReviews', 2)"></span>
-                  <span class="dot" onclick="currentSlide('clientReviews', 3)"></span>
-              </div>
-          </div>
-      </div>
-      
-      <!-- Bike Reviews Section (B) -->
-      <div class="section">
-
-          <div class="ClientSectorContainer">
-              <h1>Bike Lenders</h1>
-              <h2>¡Check some of our bike lenders reviews!</h2>
-          </div>            
-          <div class="slideshow-container" id="bikeReviews">
-              <!-- Bike Review 1 -->
-              <div class="review-slide">
-                  <div class="stars">★★★★★</div>
-                  <p class="review-text">
-                      The new electric bikes are amazing! They make hills feel flat and the battery lasts for multiple trips. Best upgrade BikeShare has made!
-                  </p>
-                  <p class="review-author">Michael Thompson</p>
-              </div>
-              
-              <!-- Bike Review 2 -->
-              <div class="review-slide">
-                  <div class="stars">★★★★☆</div>
-                  <p class="review-text">
-                      Comfortable seats and smooth ride. The gears shift perfectly. My only suggestion would be to add phone holders to more bikes.
-                  </p>
-                  <p class="review-author">Lisa Park</p>
-              </div>
-              
-              <!-- Bike Review 3 -->
-              <div class="review-slide">
-                  <div class="stars">★★★★★</div>
-                  <p class="review-text">
-                      I've tried bike shares in 5 different cities and BikeShare's bikes are by far the most reliable and well-maintained. Great job!
-                  </p>
-                  <p class="review-author">David Miller</p>
-              </div>
-              
-              <!-- Navigation arrows -->
-              <a class="prev" onclick="plusSlides('bikeReviews', -1)">❮</a>
-              <a class="next" onclick="plusSlides('bikeReviews', 1)">❯</a>
-              
-              <!-- Dots navigation -->
-              <div class="dots">
-                  <span class="dot" onclick="currentSlide('bikeReviews', 1)"></span>
-                  <span class="dot" onclick="currentSlide('bikeReviews', 2)"></span>
-                  <span class="dot" onclick="currentSlide('bikeReviews', 3)"></span>
-              </div>
-          </div>
-      </div>
-  </div>
-
-
-  <!-- Footer -->
-  <footer>
-    <div class="footer-element">
-    © BikeShare Inc 2025
-    </div>
-    <div class="footer-socials">
-        <img src="img/facebook.png">
-        <img src="img/instagram.png">
-        <img src="img/twitter.png">
-        <img src="img/linkedin.png">
-    </div>
-    <div class="header-right-container" style="margin-right: 70px;">
-      <div class="language-switcher">
+        <!-- Botones de idioma -->
+        <div class="lang-switcher" role="region" aria-label="Selector de idioma">
+          <button class="lang-btn active" onclick="translatePage('es')">ES</button>
           <button class="lang-btn" onclick="translatePage('en')">EN</button>
-          <button class="lang-btn" onclick="translatePage('es')">ES</button>
+        </div>
+      </nav>
+    </div>
+  </header>
+  <!-- /HEADER -->
+
+  <!-- ========================= HERO / BANNER PRINCIPAL ========================= -->
+  <section class="hero" id="home">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1 class="hero-title">Bienvenido a BikeShare</h1>
+      <p class="hero-subtitle">¡Contigo en cada paso de tu viaje!</p>
+      <div class="hero-cta">
+        <button class="btn-primary" id="btnRentBike">Alquila tu bicicleta</button>
+        <button class="btn-secondary" id="btnBecomePartner">Sé un Socio</button>
       </div>
-  </div>
-</footer>
-</body>
+    </div>
+  </section>
+  <!-- /HERO -->
+
+  <!-- ========================= SECCIÓN DE CARACTERÍSTICAS / BENEFICIOS ========================= -->
+  <section class="features-section" id="features">
+    <div class="container">
+      <h2 class="section-title">Características Destacadas</h2>
+      <div class="features-grid">
+        <div class="feature-card">
+          <i class="fas fa-map-marker-alt feature-icon"></i>
+          <h3>Geolocalización en tiempo real</h3>
+          <p>Encuentra bicicletas cerca a ti y verifica disponibilidad al instante.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-bicycle feature-icon"></i>
+          <h3>Bicicletas de alta calidad</h3>
+          <p>Nuestro parque de bicis se revisa y mantiene constantemente.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-clock feature-icon"></i>
+          <h3>Servicio 24/7</h3>
+          <p>Disponibles todos los días, toda la semana, sin interrupciones.</p>
+        </div>
+        <div class="feature-card">
+          <i class="fas fa-hand-holding-usd feature-icon"></i>
+          <h3>Pagos seguros</h3>
+          <p>Aceptamos tarjetas, wallets y depósitos con total confianza.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /FEATURES -->
+
+  <!-- ========================= SOBRE NOSOTROS (EQUIPO) ========================= -->
+  <section class="about-section" id="about">
+    <div class="container">
+      <h2 class="section-title">Sobre Nosotros</h2>
+      <p class="about-text">
+        BikeShare es un equipo comprometido en ofrecer soluciones de movilidad
+        sostenibles para quienes desean ahorrar y contribuir a un mejor ambiente.
+      </p>
+<div class="team-grid">
+        <div class="team-card">
+          <img
+            src="img/team/jose_martinez.jpg"
+            alt="José Luis Martínez"
+            class="team-photo"
+          />
+          <h3>José Luis Martínez</h3>
+          <p>Equipo de Ingeniería</p>
+        </div>
+        <div class="team-card">
+          <img
+            src="img/team/rodrigo_alaya.jpg"
+            alt="Rodrigo Alaya Cabrera"
+            class="team-photo"
+          />
+          <h3>Rodrigo Alaya Cabrera</h3>
+          <p>Equipo de Ingeniería</p>
+        </div>
+        <div class="team-card">
+          <img
+            src="img/team/niurka_huarcaya.jpg"
+            alt="Niurka Lucero Huarcaya"
+            class="team-photo"
+          />
+          <h3>Niurka Lucero Huarcaya</h3>
+          <p>Equipo de Ingeniería</p>
+        </div>
+        <div class="team-card">
+          <img
+            src="img/team/maria_mostajo.jpg"
+            alt="María Fernanda Mostajo"
+            class="team-photo"
+          />
+          <h3>María Fernanda Mostajo</h3>
+          <p>Equipo de Ingeniería</p>
+        </div>
+        <div class="team-card">
+          <img
+            src="img/team/karen_ramos.jpg"
+            alt="Karen Stephanie Ramos"
+            class="team-photo"
+          />
+          <h3>Karen Stephanie Ramos</h3>
+          <p>Equipo de Ingeniería</p>
+        </div>
+       </div>        
+      <!-- ▼▼▼ Video de YouTube insertado ▼▼▼ -->
+      <div class="video-container">
+        <iframe
+          src="https://youtu.be/Z01PbkKMjpE"
+          title="Video de BikeShare"
+          frameborder="0"
+          allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </div>
+      <!-- ▲▲▲ Fin del video ▲▲▲ -->
+    </div>
+  </section>
+  <!-- /ABOUT -->
+
+  <!-- ========================= PASOS / CÓMO ALQUILAR UNA BICI ========================= -->
+  <section class="how-to-section" id="how-to-rent">
+    <div class="container">
+      <h2 class="section-title">¿Cómo Alquilar una Bicicleta?</h2>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <i class="fas fa-search step-icon"></i>
+          <h3>Encuentra tu bici</h3>
+          <p>Usa nuestro mapa interactivo para ubicar la bici más cercana a tu posición.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <i class="fas fa-calendar-check step-icon"></i>
+          <h3>Reserva rápida</h3>
+          <p>Selecciona la fecha y hora, confirma la reserva y ¡listo!</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <i class="fas fa-credit-card step-icon"></i>
+          <h3>Pago seguro</h3>
+          <p>Paga con tarjeta o billetera digital. Transacciones cifradas.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <i class="fas fa-biking step-icon"></i>
+          <h3>Disfruta tu viaje</h3>
+          <p>Recoge tu bici en el punto indicado, desbloquéala y ¡a rodar!</p>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- /HOW TO RENT -->
+
+  <!-- ========================= PASOS / CÓMO SER UN SOCIO ========================= -->
+  <section class="how-to-section how-to-partner-section" id="how-to-partner">
+    <div class="container">
+      <h2 class="section-title">Cómo Ser un Socio →</h2>
+      <div class="steps-grid">
+        <div class="step-card">
+          <div class="step-number">1</div>
+          <i class="fas fa-user-plus step-icon"></i>
+          <h3>Regístrate</h3>
+          <p>Crea tu cuenta de arrendador usando tu correo electrónico y datos básicos.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">2</div>
+          <i class="fas fa-upload step-icon"></i>
+          <h3>Sube tu bicicleta</h3>
+          <p>Llena el formulario de listado con fotos, descripción y disponibilidad.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">3</div>
+          <i class="fas fa-book-open step-icon"></i>
+          <h3>Recibe reservas</h3>
+          <p>Los arrendatarios pueden reservar tu bici al instante desde la plataforma.</p>
+        </div>
+        <div class="step-card">
+          <div class="step-number">4</div>
+          <i class="fas fa-wallet step-icon"></i>
+          <h3>Gana y repite</h3>
+          <p>Recibe tu pago cada vez que tu bici sea alquilada. ¡Sencillo y rentable!</p>
+        </div>
+      </div>
+      <div class="bp-cta">
+        <a href="#" class="btn-primary">Comienza a Listar tu Bicicleta</a>
+      </div>
+    </div>
+  </section>
+  <!-- /HOW TO PARTNER -->
+
+  <!-- ========================= TESTIMONIOS / RESEÑAS DE CLIENTES ========================= -->
+  <section class="testimonials-section" id="testimonials-clients">
+    <div class="container">
+      <h2 class="section-title">Reseñas de Clientes</h2>
+      <div class="carousel-container" id="clientReviews">
+        <!-- Slide 1 -->
+        <div class="testimonial-slide">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">
+            "BikeShare transformó mi manera de desplazarme al trabajo. Las bicis siempre en
+            excelente estado y la app es súper fácil."
+          </p>
+          <p class="testimonial-author">• Emma Rodríguez</p>
+        </div>
+        <!-- Slide 2 -->
+        <div class="testimonial-slide">
+          <div class="stars">★★★★★</div>
+          <p class="testimonial-text">
+            "He sido usuario diario por más de un año y puedo decir con total confianza que
+            BikeShare ofrece el mejor servicio de la ciudad."
+          </p>
+          <p class="testimonial-author">• James Wilson</p>
+        </div>
+        <!-- Slide 3 -->
+        <div class="testimonial-slide">
+          <div class="stars">★★★★☆</div>
+          <p class="testimonial-text">
+            "Gran concepto y, en su mayoría, bien ejecutado. ¡Fantástico servicio!"
+          </p>
+          <p class="testimonial-author">• Sophia Chen</p>
+        </div>
+
+        <!-- Controles (anterior / siguiente) -->
+        <button
+          class="carousel-control prev"
+          onclick="changeSlide('clientReviews', -1)"
+          aria-label="Anterior reseña de clientes"
+        >
+          ❮
+        </button>
+        <button
+          class="carousel-control next"
+          onclick="changeSlide('clientReviews', 1)"
+          aria-label="Siguiente reseña de clientes"
+        >
+          ❯
+        </button>
+
+        <!-- Dots indicadores -->
+        <div class="carousel-dots" id="clientDots"></div>
+      </div>
+    </div>
+  </section>
+  <!-- /TESTIMONIALS CLIENTS -->
+
+  <!-- ========================= CONTACTO ========================= -->
+  <section class="contact-section" id="contact">
+    <div class="container">
+      <h2 class="section-title">Contáctanos</h2>
+      <p class="contact-subtitle">Si tienes preguntas o deseas más información, ¡escríbenos!</p>
+      <form id="contactForm" class="contact-form" role="form" aria-label="Formulario de contacto">
+        <div class="form-row">
+          <label for="nameInput" class="sr-only">Tu nombre</label>
+          <input
+            type="text"
+            name="name"
+            id="nameInput"
+            placeholder="Tu nombre"
+            required
+            aria-required="true"
+          />
+        </div>
+        <div class="form-row">
+          <label for="emailInput" class="sr-only">Tu correo electrónico</label>
+          <input
+            type="email"
+            name="email"
+            id="emailInput"
+            placeholder="Tu correo electrónico"
+            required
+            aria-required="true"
+          />
+        </div>
+        <div class="form-row">
+          <label for="messageInput" class="sr-only">Tu mensaje</label>
+          <textarea
+            name="message"
+            id="messageInput"
+            rows="5"
+            placeholder="Tu mensaje"
+            required
+            aria-required="true"
+          ></textarea>
+        </div>
+        <button type="submit" class="btn-primary">Enviar Mensaje</button>
+      </form>
+    </div>
+  </section>
+  <!-- /CONTACTO -->
+
+  <!-- ========================= FOOTER ========================= -->
+  <footer class="site-footer">
+    <div class="container footer-container">
+      <div class="footer-left">
+        <p>© BikeShare Inc 2025</p>
+        <ul class="footer-links">
+          <li><a href="#">Términos de Servicio</a></li>
+          <li><a href="#">Política de Privacidad</a></li>
+          <li><a href="#">Ayuda</a></li>
+        </ul>
+      </div>
+      <div class="footer-right">
+        <div class="footer-socials" aria-label="Redes sociales" role="region">
+          <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+          <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+          <a href="#" aria-label="WhatsApp"><i class="fab fa-whatsapp"></i></a>
+          <a href="#" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+        </div>
+      </div>
+    </div>
+  </footer>
+  <!-- /FOOTER -->
+
+  <!-- ========================= SCRIPTS ========================= -->
   <script>
-    // Translation dictionary for BikeShare
-    const translations = {
-        'en': {}, // English will use original text
-        'es': {
-            // Header and navigation
-            'Home': 'Inicio',
-            'Our System': 'Nuestro Sistema',
-            'Be a Partner': 'Sé un Socio',
-            'Reviews': 'Reseñas',
-            
-            // Home section
-            'Welcome to BikeShare': 'Bienvenido a BikeShare',
-            'With you in every step of your journey!': '¡Contigo en cada paso de tu viaje!',
-            'Every bike counts with geolocalization': 'Cada bicicleta cuenta con geolocalización',
-            'We count with high quality bikes': 'Contamos con bicicletas de alta calidad',
-            'We are available 24/7': 'Estamos disponibles 24/7',
-            'About Us →': 'Sobre Nosotros →',
-            'BikeShare': 'BikeShare',
-            'We are a team focused in bringing new solutions to people who want to save money when trying to move through a district and dont want to contaminate': 
-                'Somos un equipo enfocado en brindar nuevas soluciones a personas que quieren ahorrar dinero al moverse por un distrito sin contaminar',
-            'Engineering Team': 'Equipo de Ingeniería',
-            
-            // How to Rent section
-            'How to Rent a Bike': 'Cómo Alquilar una Bicicleta',
-            'Find the closest bikes': 'Encuentra las bicicletas más cercanas',
-            'Find the closest bikes to your location with our interactive map. Filter by price and availability in real time': 
-                'Encuentra las bicicletas más cercanas a tu ubicación con nuestro mapa interactivo. Filtra por precio y disponibilidad en tiempo real',
-            'Easy booking': 'Reserva fácil',
-            'Book a bike of your choice in no time by just using our web app': 
-                'Reserva una bicicleta de tu elección en poco tiempo usando nuestra aplicación web',
-            'Secure payments': 'Pagos seguros',
-            'Use our platform to pay for your bike. We accept credit cards and digital wallets': 
-                'Usa nuestra plataforma para pagar tu bicicleta. Aceptamos tarjetas de crédito y billeteras digitales',
-            'Pick it up and use it': 'Recógela y úsala',
-            'Get to the pick up spot, verify your bike and start using it. As easy as that': 
-                'Dirígete al punto de recogida, verifica tu bicicleta y comienza a usarla. Así de fácil',
-            'Rent a Bike': 'Alquilar una Bicicleta',
-            
-            // Partner section
-            'Join Our Team': 'Únete a Nuestro Equipo',
-            'The best service in the market!': '¡El mejor servicio del mercado!',
-            'Fast Signup': 'Registro Rápido',
-            'Sign up in under 2 minutes and list your bike': 'Regístrate en menos de 2 minutos y lista tu bicicleta',
-            '24/7 Support': 'Soporte 24/7',
-            'Get help anytime with our dedicated team': 'Obtén ayuda en cualquier momento con nuestro equipo dedicado',
-            'Secure Payments': 'Pagos Seguros',
-            'Protected transactions with a security deposit': 'Transacciones protegidas con un depósito de seguridad',
-            'How to Be a Partner': 'Cómo Ser un Socio',
-            'Sign Up': 'Regístrate',
-            'Create your lender account using your email and basic details': 
-                'Crea tu cuenta de prestador usando tu correo y datos básicos',
-            'Upload Your Bike': 'Sube Tu Bicicleta',
-            'Fill in the listing with photos, a description, and availability': 
-                'Completa el listado con fotos, una descripción y disponibilidad',
-            'Receive Bookings': 'Recibe Reservas',
-            'Renters can book your bike instantly': 'Los arrendatarios pueden reservar tu bicicleta al instante',
-            'Earn & Repeat': 'Gana y Repite',
-            'Get paid every time your bike is rented': 'Recibe pago cada vez que tu bicicleta sea alquilada',
-            'Conditions': 'Condiciones',
-            'Bike in good condition with working brakes': 'Bicicleta en buen estado con frenos que funcionen',
-            'Clear photos and honest description': 'Fotos claras y descripción honesta',
-            'Keep the availability calendar up to date': 'Mantén el calendario de disponibilidad actualizado',
-            'Start Listing Your Bike': 'Comienza a Listar Tu Bicicleta',
-            
-            // Contact section
-            'Contact Us': 'Contáctanos',
-            'If you have questions or want to know more, just reach out!': 
-                'Si tienes preguntas o quieres saber más, ¡contáctanos!',
-            'Your name': 'Tu nombre',
-            'Your email': 'Tu correo electrónico',
-            'Your message': 'Tu mensaje',
-            'Send Message': 'Enviar Mensaje',
-            
-            // Reviews section
-            'Clients': 'Clientes',
-            '¡Check some of our clients reviews!': '¡Mira algunas reseñas de nuestros clientes!',
-            'BikeShare has transformed how I commute to work. The bikes are always in great condition and the app makes the whole process seamless.': 
-                'BikeShare ha transformado mi viaje al trabajo. Las bicicletas siempre están en buen estado y la aplicación hace todo el proceso sencillo.',
-            'As a daily user for over a year, I can confidently say BikeShare provides the best service in the city. Their customer support is exceptional.': 
-                'Como usuario diario por más de un año, puedo decir con confianza que BikeShare ofrece el mejor servicio de la ciudad. Su soporte al cliente es excepcional.',
-            'Great concept and mostly well-executed. Would love to see more stations in the northern suburbs. Otherwise, fantastic service!': 
-                'Gran concepto y en su mayoría bien ejecutado. Me encantaría ver más estaciones en los suburbios del norte. ¡Por lo demás, servicio fantástico!',
-            'Bike Lenders': 'Prestadores de Bicicletas',
-            '¡Check some of our bike lenders reviews!': '¡Mira algunas reseñas de nuestros prestadores!',
-            'The new electric bikes are amazing! They make hills feel flat and the battery lasts for multiple trips. Best upgrade BikeShare has made!': 
-                '¡Las nuevas bicicletas eléctricas son increíbles! Hacen que las colinas parezcan planas y la batería dura para múltiples viajes. ¡La mejor mejora que ha hecho BikeShare!',
-            'Comfortable seats and smooth ride. The gears shift perfectly. My only suggestion would be to add phone holders to more bikes.': 
-                'Asientos cómodos y viaje suave. Los cambios de marcha son perfectos. Mi única sugerencia sería agregar soportes para teléfonos a más bicicletas.',
-            'I\'ve tried bike shares in 5 different cities and BikeShare\'s bikes are by far the most reliable and well-maintained. Great job!': 
-                'He probado sistemas de bicicletas compartidas en 5 ciudades diferentes y las bicicletas de BikeShare son, con mucho, las más confiables y bien mantenidas. ¡Buen trabajo!',
-            
-            // Footer
-            '© BikeShare Inc 2025': '© BikeShare Inc 2025'
-        }
-    };
+    // ========================= Funcionalidad de Menú Responsive con ARIA =========================
+    const hamburgerBtn = document.getElementById('hamburgerBtn');
+    const navMenu = document.getElementById('navMenu');
 
-    // Store original text content for all elements
-    const originalTexts = new Map();
-    const elementsToTranslate = document.querySelectorAll('h1, h2, h3, h4, p:not(.review-author), .review-text, .segmented-button, input[placeholder], textarea[placeholder], button:not(.lang-btn), li, a');
-
-    // Save original texts
-    elementsToTranslate.forEach(element => {
-        if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-            originalTexts.set(element, element.getAttribute('placeholder'));
-        } else if (element.tagName === 'BUTTON' && element.textContent.trim() !== 'EN' && element.textContent.trim() !== 'ES') {
-            originalTexts.set(element, element.textContent.trim());
-        } else if (element.tagName !== 'BUTTON') {
-            originalTexts.set(element, element.textContent.trim());
-        }
+    hamburgerBtn.addEventListener('click', () => {
+      const expanded = hamburgerBtn.getAttribute('aria-expanded') === 'true' || false;
+      hamburgerBtn.setAttribute('aria-expanded', !expanded);
+      navMenu.classList.toggle('open');
+      hamburgerBtn.classList.toggle('open');
     });
 
-    let currentLang = 'en';
+    // Cierra el menú al hacer clic en un enlace (móvil)
+    document.querySelectorAll('.nav-link').forEach((link) => {
+      link.addEventListener('click', () => {
+        navMenu.classList.remove('open');
+        hamburgerBtn.classList.remove('open');
+        hamburgerBtn.setAttribute('aria-expanded', 'false');
+      });
+    });
 
-    function translatePage(targetLang) {
-        if (currentLang === targetLang) return;
+    // ========================= Traducción de página (simplificado) =========================
+    const translations = {
+      es: {
+        /* Navegación */
+        Inicio: 'Inicio',
+        'Nuestro Sistema': 'Nuestro Sistema',
+        'Sobre Nosotros': 'Sobre Nosotros',
+        '¿Cómo Alquilar?': '¿Cómo Alquilar?',
+        'Sé un Socio': 'Sé un Socio',
+        Reseñas: 'Reseñas',
+        Contacto: 'Contacto',
+        /* Hero */
+        'Bienvenido a BikeShare': 'Bienvenido a BikeShare',
+        '¡Contigo en cada paso de tu viaje!': '¡Contigo en cada paso de tu viaje!',
+        'Alquila tu bicicleta': 'Alquila tu bicicleta',
+        'Sé un Socio': 'Sé un Socio',
+        /* Features */
+        'Características Destacadas': 'Características Destacadas',
+        'Geolocalización en tiempo real': 'Geolocalización en tiempo real',
+        'Encuentra bicicletas cerca a ti y verifica disponibilidad al instante.':
+          'Encuentra bicicletas cerca a ti y verifica disponibilidad al instante.',
+        'Bicicletas de alta calidad': 'Bicicletas de alta calidad',
+        'Nuestro parque de bicis se revisa y mantiene constantemente.':
+          'Nuestro parque de bicis se revisa y mantiene constantemente.',
+        'Servicio 24/7': 'Servicio 24/7',
+        'Disponibles todos los días, toda la semana, sin interrupciones.':
+          'Disponibles todos los días, toda la semana, sin interrupciones.',
+        'Pagos seguros': 'Pagos seguros',
+        'Aceptamos tarjetas, wallets y depósitos con total confianza.':
+          'Aceptamos tarjetas, wallets y depósitos con total confianza.',
+        /* About */
+        'Sobre Nosotros': 'Sobre Nosotros',
+        'BikeShare es un equipo comprometido en ofrecer soluciones de movilidad sostenibles para quienes desean ahorrar y contribuir a un mejor ambiente.':
+          'BikeShare es un equipo comprometido en ofrecer soluciones de movilidad sostenibles para quienes desean ahorrar y contribuir a un mejor ambiente.',
+        /* How to Rent */
+        '¿Cómo Alquilar una Bicicleta?': '¿Cómo Alquilar una Bicicleta?',
+        'Encuentra tu bici': 'Encuentra tu bici',
+        'Usa nuestro mapa interactivo para ubicar la bici más cercana a tu posición.':
+          'Usa nuestro mapa interactivo para ubicar la bici más cercana a tu posición.',
+        'Reserva rápida': 'Reserva rápida',
+        'Selecciona la fecha y hora, confirma la reserva y ¡listo!':
+          'Selecciona la fecha y hora, confirma la reserva y ¡listo!',
+        'Pago seguro': 'Pago seguro',
+        'Paga con tarjeta o billetera digital. Transacciones cifradas.':
+          'Paga con tarjeta o billetera digital. Transacciones cifradas.',
+        'Disfruta tu viaje': 'Disfruta tu viaje',
+        'Recoge tu bici en el punto indicado, desbloquéala y ¡a rodar!':
+          'Recoge tu bici en el punto indicado, desbloquéala y ¡a rodar!',
+        /* How to Partner */
+        'Cómo Ser un Socio →': 'Cómo Ser un Socio →',
+        Regístrate: 'Regístrate',
+        'Crea tu cuenta de arrendador usando tu correo electrónico y datos básicos.':
+          'Crea tu cuenta de arrendador usando tu correo electrónico y datos básicos.',
+        'Sube tu bicicleta': 'Sube tu bicicleta',
+        'Llena el formulario de listado con fotos, descripción y disponibilidad.':
+          'Llena el formulario de listado con fotos, descripción y disponibilidad.',
+        'Recibe reservas': 'Recibe reservas',
+        'Los arrendatarios pueden reservar tu bici al instante desde la plataforma.':
+          'Los arrendatarios pueden reservar tu bici al instante desde la plataforma.',
+        'Gana y repite': 'Gana y repite',
+        'Recibe tu pago cada vez que tu bici sea alquilada. ¡Sencillo y rentable!':
+          'Recibe tu pago cada vez que tu bici sea alquilada. ¡Sencillo y rentable!',
+        'Comienza a Listar tu Bicicleta': 'Comienza a Listar tu Bicicleta',
+        /* Testimonials Clients */
+        'Reseñas de Clientes': 'Reseñas de Clientes',
+        /* Contact */
+        'Contáctanos': 'Contáctanos',
+        'Si tienes preguntas o deseas más información, ¡escríbenos!': 'Si tienes preguntas o deseas más información, ¡escríbenos!',
+        'Tu nombre': 'Tu nombre',
+        'Tu correo electrónico': 'Tu correo electrónico',
+        'Tu mensaje': 'Tu mensaje',
+        'Enviar Mensaje': 'Enviar Mensaje',
+        /* Footer */
+        '© BikeShare Inc 2025': '© BikeShare Inc 2025',
+        'Términos de Servicio': 'Términos de Servicio',
+        'Política de Privacidad': 'Política de Privacidad',
+        Ayuda: 'Ayuda'
+      },
+      en: {
+        /* Navegación */
+        Inicio: 'Home',
+        'Nuestro Sistema': 'Our System',
+        'Sobre Nosotros': 'About Us',
+        '¿Cómo Alquilar?': 'How to Rent?',
+        'Sé un Socio': 'Be a Partner',
+        Reseñas: 'Reviews',
+        Contacto: 'Contact',
+        /* Hero */
+        'Bienvenido a BikeShare': 'Welcome to BikeShare',
+        '¡Contigo en cada paso de tu viaje!': 'With you every step of the way!',
+        'Alquila tu bicicleta': 'Rent a Bike',
+        'Sé un Socio': 'Be a Partner',
+        /* Features */
+        'Características Destacadas': 'Key Features',
+        'Geolocalización en tiempo real': 'Real-Time Location',
+        'Encuentra bicicletas cerca a ti y verifica disponibilidad al instante.':
+          'Find bikes near you and check availability instantly.',
+        'Bicicletas de alta calidad': 'High-Quality Bikes',
+        'Nuestro parque de bicis se revisa y mantiene constantemente.':
+          'Our bike fleet is constantly inspected and maintained.',
+        'Servicio 24/7': '24/7 Service',
+        'Disponibles todos los días, toda la semana, sin interrupciones.':
+          'Available every day, all week, without interruption.',
+        'Pagos seguros': 'Secure Payments',
+        'Aceptamos tarjetas, wallets y depósitos con total confianza.':
+          'We accept cards, wallets and secure deposits.',
+        /* About */
+        'Sobre Nosotros': 'About Us',
+        'BikeShare es un equipo comprometido en ofrecer soluciones de movilidad sostenibles para quienes desean ahorrar y contribuir a un mejor ambiente.':
+          'BikeShare is a dedicated team offering sustainable mobility solutions for those who want to save money and help the environment.',
+        /* How to Rent */
+        '¿Cómo Alquilar una Bicicleta?': 'How to Rent a Bike?',
+        'Encuentra tu bici': 'Find your bike',
+        'Usa nuestro mapa interactivo para ubicar la bici más cercana a tu posición.':
+          'Use our interactive map to locate the nearest bike to you.',
+        'Reserva rápida': 'Quick Booking',
+        'Selecciona la fecha y hora, confirma la reserva y ¡listo!':
+          'Choose date & time, confirm your booking, and you’re set!',
+        'Pago seguro': 'Secure Payment',
+        'Paga con tarjeta o billetera digital. Transacciones cifradas.':
+          'Pay with card or digital wallet. Encrypted transactions.',
+        'Disfruta tu viaje': 'Enjoy Your Ride',
+        'Recoge tu bici en el punto indicado, desbloquéala y ¡a rodar!':
+          'Pick up your bike at the designated spot, unlock it, and go!',
+        /* How to Partner */
+        'Cómo Ser un Socio →': 'How to Be a Partner →',
+        Regístrate: 'Sign Up',
+        'Crea tu cuenta de arrendador usando tu correo electrónico y datos básicos.':
+          'Create your landlord account using your email and basic details.',
+        'Sube tu bicicleta': 'Upload Your Bike',
+        'Llena el formulario de listado con fotos, descripción y disponibilidad.':
+          'Fill in the listing with photos, description, and availability.',
+        'Recibe reservas': 'Receive Bookings',
+        'Los arrendatarios pueden reservar tu bici al instante desde la plataforma.':
+          'Renters can book your bike instantly.',
+        'Gana y repite': 'Earn & Repeat',
+        'Recibe tu pago cada vez que tu bici sea alquilada. ¡Sencillo y rentable!':
+          'Get paid every time your bike is rented. Simple and profitable!',
+        'Comienza a Listar tu Bicicleta': 'Start Listing Your Bike',
+        /* Testimonials Clients */
+        'Reseñas de Clientes': 'Client Reviews',
+        /* Contact */
+        'Contáctanos': 'Contact Us',
+        'Si tienes preguntas o deseas más información, ¡escríbenos!':
+          'If you have questions or want more info, just reach out!',
+        'Tu nombre': 'Your Name',
+        'Tu correo electrónico': 'Your Email',
+        'Tu mensaje': 'Your Message',
+        'Enviar Mensaje': 'Send Message',
+        /* Footer */
+        '© BikeShare Inc 2025': '© BikeShare Inc 2025',
+        'Términos de Servicio': 'Terms of Service',
+        'Política de Privacidad': 'Privacy Policy',
+        Ayuda: 'Help'
+      }
+    };
 
-        // If switching back to English, restore all original texts
-        if (targetLang === 'en') {
-            elementsToTranslate.forEach(element => {
-                const originalText = originalTexts.get(element);
-                if (originalText) {
-                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                        element.setAttribute('placeholder', originalText);
-                    } else if (element.tagName === 'BUTTON' && element.textContent.trim() !== 'EN' && element.textContent.trim() !== 'ES') {
-                        element.textContent = originalText;
-                    } else if (element.tagName !== 'BUTTON') {
-                        element.textContent = originalText;
-                    }
-                }
-            });
+    let currentLang = localStorage.getItem('preferredLanguage') || 'es';
+
+    // Guardamos los textos originales al cargar
+    const originalTextMap = new Map();
+    document
+      .querySelectorAll(
+        'h1, h2, h3, p, button:not(.lang-btn), input[placeholder], textarea[placeholder], .nav-link, .section-title'
+      )
+      .forEach((el) => {
+        if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+          originalTextMap.set(el, el.getAttribute('placeholder'));
         } else {
-            // Translate to Spanish
-            elementsToTranslate.forEach(element => {
-                let textToTranslate;
-                if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                    textToTranslate = element.getAttribute('placeholder');
-                } else if (element.tagName === 'BUTTON' && element.textContent.trim() !== 'EN' && element.textContent.trim() !== 'ES') {
-                    textToTranslate = element.textContent.trim();
-                } else if (element.tagName !== 'BUTTON') {
-                    textToTranslate = element.textContent.trim();
-                }
-
-                if (textToTranslate && translations[targetLang][textToTranslate]) {
-                    if (element.tagName === 'INPUT' || element.tagName === 'TEXTAREA') {
-                        element.setAttribute('placeholder', translations[targetLang][textToTranslate]);
-                    } else if (element.tagName === 'BUTTON' && element.textContent.trim() !== 'EN' && element.textContent.trim() !== 'ES') {
-                        element.textContent = translations[targetLang][textToTranslate];
-                    } else if (element.tagName !== 'BUTTON') {
-                        element.textContent = translations[targetLang][textToTranslate];
-                    }
-                }
-            });
+          originalTextMap.set(el, el.textContent.trim());
         }
+      });
 
-        // Update UI
-        document.querySelectorAll('.lang-btn').forEach(btn => {
-            btn.classList.toggle('active', btn.textContent === targetLang.toUpperCase());
+    function translatePage(lang) {
+      if (lang === currentLang) return;
+      document
+        .querySelectorAll(
+          'h1, h2, h3, p, button:not(.lang-btn), input[placeholder], textarea[placeholder], .nav-link, .section-title'
+        )
+        .forEach((el) => {
+          if (el.tagName === 'INPUT' || el.tagName === 'TEXTAREA') {
+            const orig = originalTextMap.get(el);
+            if (translations[lang][orig]) {
+              el.setAttribute('placeholder', translations[lang][orig]);
+            }
+          } else {
+            const orig = originalTextMap.get(el);
+            if (translations[lang][orig]) {
+              el.textContent = translations[lang][orig];
+            }
+          }
+        });
+      currentLang = lang;
+      localStorage.setItem('preferredLanguage', lang);
+      // Actualizar clases de los botones de idioma
+      document.querySelectorAll('.lang-btn').forEach((btn) => {
+        btn.classList.toggle('active', btn.textContent.toLowerCase() === lang);
+      });
+      // Cambiar atributo lang en <html>
+      document.documentElement.lang = lang;
+    }
+
+    // Traducir al cargar según preferencia
+    document.addEventListener('DOMContentLoaded', () => {
+      translatePage(currentLang);
+      setupCarousel('clientReviews', 'clientDots');
+      setupCarousel('lenderReviews', 'lenderDots');
+    });
+
+    // ========================= MODALES =========================
+    const modalRent = document.getElementById('modalRent');
+    const modalPartner = document.getElementById('modalPartner');
+    const btnRentBike = document.getElementById('btnRentBike');
+    const btnBecomePartner = document.getElementById('btnBecomePartner');
+    const closeRentModal = document.getElementById('closeRentModal');
+    const closePartnerModal = document.getElementById('closePartnerModal');
+
+    btnRentBike.addEventListener('click', () => {
+      modalRent.classList.add('active');
+    });
+    closeRentModal.addEventListener('click', () => {
+      modalRent.classList.remove('active');
+    });
+
+    btnBecomePartner.addEventListener('click', () => {
+      modalPartner.classList.add('active');
+    });
+    closePartnerModal.addEventListener('click', () => {
+      modalPartner.classList.remove('active');
+    });
+
+    // Cerrar modales si se hace clic fuera del contenido
+    window.addEventListener('click', (e) => {
+      if (e.target === modalRent) modalRent.classList.remove('active');
+      if (e.target === modalPartner) modalPartner.classList.remove('active');
+    });
+
+    // ========================= Validación y envío de formularios =========================
+    document.getElementById('contactForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const name = document.getElementById('nameInput').value.trim();
+      const email = document.getElementById('emailInput').value.trim();
+      const message = document.getElementById('messageInput').value.trim();
+      if (!name || !email || !message) {
+        alert('Por favor, completa todos los campos.');
+        return;
+      }
+      alert('¡Gracias por contactarnos! Te responderemos pronto.');
+      e.target.reset();
+    });
+
+    document.getElementById('partnerForm').addEventListener('submit', (e) => {
+      e.preventDefault();
+      const inputs = e.target.querySelectorAll('input');
+      for (let input of inputs) {
+        if (input.value.trim() === '') {
+          alert('Por favor completa todos los campos.');
+          return;
+        }
+      }
+      alert('¡Solicitud enviada! Pronto nos comunicaremos contigo.');
+      e.target.reset();
+      modalPartner.classList.remove('active');
+    });
+
+    // ========================= CARRUSELES DE TESTIMONIOS =========================
+    function setupCarousel(containerId, dotsContainerId) {
+      let index = 1;
+      const slides = document.querySelectorAll(`#${containerId} .testimonial-slide`);
+      const dotsContainer = document.getElementById(dotsContainerId);
+
+      // Crear dots dinámicamente
+      slides.forEach((_, idx) => {
+        const dot = document.createElement('span');
+        dot.classList.add('dot');
+        dot.dataset.index = idx + 1;
+        dot.addEventListener('click', () => {
+          showSlide(idx + 1);
+        });
+        dotsContainer.appendChild(dot);
+      });
+
+      function showSlide(n) {
+        if (n > slides.length) index = 1;
+        else if (n < 1) index = slides.length;
+        else index = n;
+
+        slides.forEach((slide, idx) => {
+          slide.style.display = idx + 1 === index ? 'block' : 'none';
         });
 
-        // Update HTML lang attribute
-        document.documentElement.lang = targetLang;
-        currentLang = targetLang;
+        dotsContainer.querySelectorAll('.dot').forEach((dot, idx) => {
+          if (idx + 1 === index) dot.classList.add('active');
+          else dot.classList.remove('active');
+        });
+      }
 
-        // Store preference
-        localStorage.setItem('preferredLanguage', targetLang);
+      function changeSlide(n) {
+        showSlide(index + n);
+      }
+
+      // Botones prev/next
+      document
+        .querySelector(`#${containerId} .prev`)
+        .addEventListener('click', () => changeSlide(-1));
+      document
+        .querySelector(`#${containerId} .next`)
+        .addEventListener('click', () => changeSlide(1));
+
+      // Mostrar primer slide e iniciar autoplay
+      showSlide(index);
+      setInterval(() => {
+        changeSlide(1);
+      }, 5000);
     }
-
-    // Check for saved language preference on load
-    document.addEventListener('DOMContentLoaded', () => {
-        const savedLang = localStorage.getItem('preferredLanguage') || 'en';
-        if (savedLang !== 'en') {
-            translatePage(savedLang);
-        }
-    });
-</script>
-  <script>
-    // Initialize slide indices for both slideshows
-    let slideIndices = {
-        clientReviews: 1,
-        bikeReviews: 1
-    };
-
-    // Show initial slides for both slideshows
-    showSlides('clientReviews', slideIndices.clientReviews);
-    showSlides('bikeReviews', slideIndices.bikeReviews);
-
-    function plusSlides(slideshowId, n) {
-        slideIndices[slideshowId] += n;
-        showSlides(slideshowId, slideIndices[slideshowId]);
-    }
-
-    function currentSlide(slideshowId, n) {
-        slideIndices[slideshowId] = n;
-        showSlides(slideshowId, slideIndices[slideshowId]);
-    }
-
-    function showSlides(slideshowId, n) {
-        let i;
-        // Get elements specific to the current slideshow
-        let slideshow = document.getElementById(slideshowId);
-        let slides = slideshow.getElementsByClassName("review-slide");
-        let dots = slideshow.getElementsByClassName("dot");
-        
-        // Handle wrap-around
-        if (n > slides.length) { slideIndices[slideshowId] = 1 }
-        if (n < 1) { slideIndices[slideshowId] = slides.length }
-        
-        // Hide all slides
-        for (i = 0; i < slides.length; i++) {
-            slides[i].style.display = "none";
-        }
-        
-        // Remove active class from all dots
-        for (i = 0; i < dots.length; i++) {
-            dots[i].className = dots[i].className.replace(" active", "");
-        }
-        
-        // Show current slide and activate corresponding dot
-        slides[slideIndices[slideshowId]-1].style.display = "block";
-        dots[slideIndices[slideshowId]-1].className += " active";
-    }
-
-    // Auto-advance both slideshows
-    setInterval(function() {
-        plusSlides('clientReviews', 1);
-    }, 5000);
-
-    setInterval(function() {
-        plusSlides('bikeReviews', 1);
-    }, 5000);
   </script>
-  <script>
-    function selectButton(clickedButton) {
-    const allButtons = document.querySelectorAll('.segmented-button');
-    allButtons.forEach(button => {
-        button.classList.remove('selected');
-    });
-
-    clickedButton.classList.add('selected');
-
-    const buttonText = clickedButton.textContent.trim();
-    let targetId = '';
-
-    switch(buttonText) {
-        case 'Home':
-            targetId = 'home-section';
-            break;
-        case 'Our System':
-            targetId = 'system-section';
-            break;
-        case 'Be a Partner':
-            targetId = 'partner-section';
-            break;
-        case 'Reviews':
-            targetId = 'review-section';
-            break;
-    }
-
-    if(targetId) {
-        // Add a small delay to ensure smooth scrolling works
-        setTimeout(() => {
-            const element = document.getElementById(targetId);
-            if (element) {
-                element.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        }, 50); // 50ms delay is usually enough
-    }
-}function selectButton(clickedButton) {
-    const allButtons = document.querySelectorAll('.segmented-button');
-    allButtons.forEach(button => {
-        button.classList.remove('selected');
-    });
-
-    clickedButton.classList.add('selected');
-
-    const buttonText = clickedButton.textContent.trim();
-    let targetId = '';
-
-    switch(buttonText) {
-        case 'Home':
-            targetId = 'home-section';
-            break;
-        case 'Our System':
-            targetId = 'system-section';
-            break;
-        case 'Be a Partner':
-            targetId = 'partner-section';
-            break;
-        case 'Reviews':
-            targetId = 'review-section';
-            break;
-    }
-
-    if(targetId) {
-        // Add a small delay to ensure smooth scrolling works
-        setTimeout(() => {
-            const element = document.getElementById(targetId);
-            if (element) {
-                element.scrollIntoView({
-                    behavior: 'smooth',
-                    block: 'start'
-                });
-            }
-        }, 50); // 50ms delay is usually enough
-    }
-}
-    </script>
+</body>
 </html>
